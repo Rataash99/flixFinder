@@ -3,7 +3,6 @@ const favourites = document.querySelector("#favourites");
 let movieData = [];
 const retreivedData = localStorage.getItem("favMovieData");
 let favoriteMovies = JSON.parse(retreivedData);
-console.log(typeof(favoriteMovies));
 
 // api call returning movie array
 const movieApi = (query) => {
@@ -47,7 +46,7 @@ function createMovieDiv(movieData){
     // adding movies to div
     movieData.forEach(item => {
         let isPresent = false;
-        if(favoriteMovies != null){
+        if(favoriteMovies.length != 0){
             favoriteMovies.forEach(card => {
                 if(card.id == item.id){
                     isPresent = true;
@@ -95,10 +94,10 @@ movies.addEventListener('click', (e) => {
         movieData.forEach(item => {
             if(e.target.id == item.id){
                 if(e.target.classList.contains("marked")){
-                    favoriteMovies.push(item);
+                    favoriteMovies && favoriteMovies.push(item);
                 }
                 else{
-                    favoriteMovies = favoriteMovies.filter(obj => {
+                    favoriteMovies = favoriteMovies && favoriteMovies.filter(obj => {
                         return e.target.id != obj.id;
                     })
                 }
