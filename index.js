@@ -1,4 +1,6 @@
-const favourites = document.querySelector("#favourites");
+document.addEventListener('DOMContentLoaded', function() {
+    // Your JavaScript code here
+    const favourites = document.querySelector("#favourites");
 
 let movieData = [];
 const retreivedData = localStorage.getItem("favMovieData");
@@ -33,7 +35,7 @@ function createMovieDiv(movieData){
     const movies = document.querySelector("#movies");
 
     // edge case - if no movies found
-    if(!movieData || movieData.length == 0){
+    if(movieData.length == 0){
         const ele = document.createElement('div');
         ele.innerHTML = `<div class = "text-2xl mx-auto flex flex-col justify-center items-center p-2 gap-4 text-center w-[65vw] h-[85vh]  rounded-md">
             <div class = "flex flex-col sm:flex-row gap-3 items-center"> 
@@ -209,3 +211,5 @@ function sendingDataToHTML(element, item){
         }
     })
 }
+});
+

@@ -1,4 +1,6 @@
-const retreivedData = localStorage.getItem("favMovieData");
+document.addEventListener('DOMContentLoaded', function() {
+    // Your JavaScript code here
+    const retreivedData = localStorage.getItem("favMovieData");
 let favoriteMovies = [];
 if(retreivedData) favoriteMovies = JSON.parse(retreivedData);
 
@@ -75,3 +77,6 @@ function sendingDataToHTML(element, item){
         }
     })
 }
+
+});
+
