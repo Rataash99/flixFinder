@@ -3,6 +3,7 @@ const favourites = document.querySelector("#favourites");
 let movieData = [];
 const retreivedData = localStorage.getItem("favMovieData");
 let favoriteMovies = JSON.parse(retreivedData);
+console.log(typeof(favoriteMovies));
 
 // api call returning movie array
 const movieApi = (query) => {
@@ -46,7 +47,7 @@ function createMovieDiv(movieData){
     // adding movies to div
     movieData.forEach(item => {
         let isPresent = false;
-        if(favoriteMovies.length != 0){
+        if(favoriteMovies != null){
             favoriteMovies.forEach(card => {
                 if(card.id == item.id){
                     isPresent = true;
