@@ -46,7 +46,7 @@ function createMovieDiv(movieData){
     // adding movies to div
     movieData && movieData.forEach(item => {
         let isPresent = false;
-        if(favoriteMovies.length != 0){
+        if(favoriteMovies && favoriteMovies.length != 0){
             favoriteMovies.forEach(card => {
                 if(card.id == item.id){
                     isPresent = true;
