@@ -2,7 +2,9 @@ const favourites = document.querySelector("#favourites");
 
 let movieData = [];
 const retreivedData = localStorage.getItem("favMovieData");
-let favoriteMovies = JSON.parse(retreivedData);
+
+let favoriteMovies = []
+if(retreivedData) favoriteMovies = JSON.parse(retreivedData);
 
 // api call returning movie array
 const movieApi = (query) => {
@@ -31,7 +33,7 @@ function createMovieDiv(movieData){
     const movies = document.querySelector("#movies");
 
     // edge case - if no movies found
-    if(movieData && movieData.length == 0){
+    if(movieData.length == 0){
         const ele = document.createElement('div');
         ele.innerHTML = `<div class = "text-2xl mx-auto flex flex-col justify-center items-center p-2 gap-4 text-center w-[65vw] h-[85vh]  rounded-md">
             <div class = "flex flex-col sm:flex-row gap-3 items-center"> 
@@ -44,9 +46,9 @@ function createMovieDiv(movieData){
         return;
     }
     // adding movies to div
-    movieData && movieData.forEach(item => {
+    movieData.forEach(item => {
         let isPresent = false;
-        if(favoriteMovies && favoriteMovies.length != 0){
+        if(favoriteMovies.length != 0){
             favoriteMovies.forEach(card => {
                 if(card.id == item.id){
                     isPresent = true;
@@ -94,10 +96,10 @@ movies.addEventListener('click', (e) => {
         movieData.forEach(item => {
             if(e.target.id == item.id){
                 if(e.target.classList.contains("marked")){
-                    favoriteMovies && favoriteMovies.push(item);
+                    favoriteMovies.push(item);
                 }
                 else{
-                    favoriteMovies = favoriteMovies && favoriteMovies.filter(obj => {
+                    favoriteMovies = favoriteMovies.filter(obj => {
                         return e.target.id != obj.id;
                     })
                 }
