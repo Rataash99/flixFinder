@@ -1,6 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Your JavaScript code here
-    const favourites = document.querySelector("#favourites");
+const favourites = document.querySelector("#favourites");
 
 let movieData = [];
 const retreivedData = localStorage.getItem("favMovieData");
@@ -35,7 +33,7 @@ function createMovieDiv(movieData){
     const movies = document.querySelector("#movies");
 
     // edge case - if no movies found
-    if(movieData.length == 0){
+    if(!movieData || movieData.length == 0){
         const ele = document.createElement('div');
         ele.innerHTML = `<div class = "text-2xl mx-auto flex flex-col justify-center items-center p-2 gap-4 text-center w-[65vw] h-[85vh]  rounded-md">
             <div class = "flex flex-col sm:flex-row gap-3 items-center"> 
@@ -50,7 +48,7 @@ function createMovieDiv(movieData){
     // adding movies to div
     movieData.forEach(item => {
         let isPresent = false;
-        if(favoriteMovies.length != 0){
+        if(favoriteMovies && favoriteMovies.length != 0){
             favoriteMovies.forEach(card => {
                 if(card.id == item.id){
                     isPresent = true;
@@ -211,5 +209,3 @@ function sendingDataToHTML(element, item){
         }
     })
 }
-});
-
