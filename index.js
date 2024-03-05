@@ -109,14 +109,12 @@ movies.addEventListener('click', (e) => {
         const favData = JSON.stringify(favoriteMovies);
         localStorage.setItem('favMovieData', favData);
     }
-    console.log(favoriteMovies);
 });
 
     // handling favorite.html
     const favBtn = document.querySelector('#go-to-fav');
     favBtn.addEventListener('click', handleFavBtn);
     function handleFavBtn(){
-        console.log(favoriteMovies);
         const jsonData = JSON.stringify(favoriteMovies);
         window.location.href = `./favorite.html?favorites=${encodeURIComponent(jsonData)}`
     }
@@ -154,8 +152,7 @@ movies.addEventListener('click', (e) => {
         fetch(url)
         .then(response => response.json())
         .then(data => {
-            // Process the response data
-            handleSearchList(data.results, e);
+            handleSearchList(data.results, e);// Process the response data
         })
         .catch(error => {
             console.error('Error fetching data:', error);

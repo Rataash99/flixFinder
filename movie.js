@@ -2,8 +2,6 @@
 const params = new URLSearchParams(window.location.search);
 const jsonData = params.get('data');
 const data = JSON.parse(decodeURIComponent(jsonData));
-const prevUrl = params.get('prevUrl');
-console.log(data);
 
 fetch("https://api.themoviedb.org/3/genre/movie/list?api_key=3206e39e86eabbd67afc597cdeafe219")
 .then(response => {
@@ -40,10 +38,3 @@ const voteAvg = document.querySelector("#vote-avg");
 voteAvg.textContent = `${data.vote_average.toFixed(2)}`;
 
 const genre = document.querySelector("#genre");
-
-// back to previous page 
-const goBack = document.querySelector('#prev-page');
-goBack.addEventListener('click', () => {
-    console.log(prevUrl);
-    goBack.src = prevUrl;
-})

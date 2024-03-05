@@ -65,7 +65,6 @@ function sendingDataToHTML(element, item){
             favoriteMovies = favoriteMovies.filter(obj => {
                 return e.target.id != obj.id;
             })
-            console.log(favoriteMovies);
             movies.innerHTML = "";
             createMovieDiv(favoriteMovies);
 
