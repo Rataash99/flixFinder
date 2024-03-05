@@ -3,7 +3,7 @@ const favourites = document.querySelector("#favourites");
 let movieData = [];
 const retreivedData = localStorage.getItem("favMovieData");
 
-let favoriteMovies = []
+let favoriteMovies = [];
 if(retreivedData) favoriteMovies = JSON.parse(retreivedData);
 
 // api call returning movie array
@@ -96,10 +96,10 @@ movies.addEventListener('click', (e) => {
         movieData.forEach(item => {
             if(e.target.id == item.id){
                 if(e.target.classList.contains("marked")){
-                    favoriteMovies.push(item);
+                    favoriteMovies && favoriteMovies.push(item);
                 }
                 else{
-                    favoriteMovies = favoriteMovies.filter(obj => {
+                    favoriteMovies = favoriteMovies && favoriteMovies.filter(obj => {
                         return e.target.id != obj.id;
                     })
                 }
