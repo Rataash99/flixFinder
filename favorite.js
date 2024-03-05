@@ -24,7 +24,7 @@ function createMovieDiv(movieData){
         div.innerHTML = `
         <a class = " cursor-pointer w-[76vw] max-w-[12rem] md:max-w-[14rem] mx-auto text-xs flex flex-col gap-[1.4rem] justify-center mb-2 hover:opacity-80 hover:scale-105 duration-200 ease-linear relative" >
             <div class = " flex gap-[1rem] relative">
-                <img src = ${item.poster_path !== null ? `https://image.tmdb.org/t/p/w440_and_h660_face/${item.poster_path}` : "/Images/360_F_374769082_EjmEBw7tarfjhwJ78Xxs05OjRBN4lwSp.webp"} class = "shadow-xl shadow-slate-800 w-full"/>
+                <img src = ${item.poster_path !== null ? `https://image.tmdb.org/t/p/w440_and_h660_face/${item.poster_path}` : "./Images/360_F_374769082_EjmEBw7tarfjhwJ78Xxs05OjRBN4lwSp.webp"} class = "shadow-xl shadow-slate-800 w-full"/>
                 <p id = "rating" class = "absolute bottom-5 -right-5 bg-gradient-to-r from-cyan-400 via-cyan-600 to-violet-700 rounded-full p-2 py-[0.8rem] shadow-xl shadow-black">${
                     item.vote_average.toFixed(2)}</p>
             </div>

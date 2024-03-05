@@ -3,7 +3,6 @@ const favourites = document.querySelector("#favourites");
 let movieData = [];
 const retreivedData = localStorage.getItem("favMovieData");
 let favoriteMovies = JSON.parse(retreivedData);
-let prevSrc = "";
 
 // api call returning movie array
 const movieApi = (query) => {
@@ -13,7 +12,6 @@ const movieApi = (query) => {
         return;
     }
     let url = 'https://api.themoviedb.org/3/discover/movie?api_key=3206e39e86eabbd67afc597cdeafe219';
-    prevSrc = url; // initial prevSrc value
     fetch(url)
     .then(response => {
         return response.json();
@@ -60,7 +58,7 @@ function createMovieDiv(movieData){
         div.innerHTML = `
         <a class = " cursor-pointer w-[76vw] max-w-[12rem] md:max-w-[14rem] mx-auto text-xs flex flex-col gap-[1.4rem] justify-center mb-2 hover:opacity-80 hover:scale-105 duration-200 ease-linear" >
             <div class = " flex gap-[1rem] relative">
-                <img src = ${item.poster_path !== null ? `https://image.tmdb.org/t/p/w440_and_h660_face/${item.poster_path}` : "/Images/360_F_374769082_EjmEBw7tarfjhwJ78Xxs05OjRBN4lwSp.webp"} class = "shadow-xl shadow-slate-800 w-full"/>
+                <img src = ${item.poster_path !== null ? `https://image.tmdb.org/t/p/w440_and_h660_face/${item.poster_path}` : "./Images/360_F_374769082_EjmEBw7tarfjhwJ78Xxs05OjRBN4lwSp.webp"} class = "shadow-xl shadow-slate-800 w-full"/>
                 <p id = "rating" class = "absolute bottom-5 -right-5 bg-gradient-to-r from-cyan-400 via-cyan-600 to-violet-700 rounded-full p-2 py-[0.8rem] shadow-xl shadow-black">${
                     item.vote_average.toFixed(2)}</p>
             </div>
@@ -148,7 +146,6 @@ movies.addEventListener('click', (e) => {
     function handleSearch(e){
         const searchQuery = searchInput.value.trim();
         const url = `https://api.themoviedb.org/3/search/movie?api_key=3206e39e86eabbd67afc597cdeafe219&query=${searchQuery}`;
-        prevSrc = url; // updated prevSrc value
         fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -186,7 +183,7 @@ movies.addEventListener('click', (e) => {
         searchMovie.forEach((movie, idx) => {
             const li = document.createElement('li');
             li.innerHTML = `<div class = " flex flex-row justify-between items-center p-3 gap-3 text-xs cursor-pointer duration-300 hover:bg-opacity-10  hover:bg-white hover:translate-x-1">
-                <img src = ${movie.poster_path !== null ? `https://image.tmdb.org/t/p/w440_and_h660_face/${movie.poster_path}` : "/Images/360_F_374769082_EjmEBw7tarfjhwJ78Xxs05OjRBN4lwSp.webp"} class = "size-12 rounded-full"/>
+                <img src = ${movie.poster_path !== null ? `https://image.tmdb.org/t/p/w440_and_h660_face/${movie.poster_path}` : "./Images/360_F_374769082_EjmEBw7tarfjhwJ78Xxs05OjRBN4lwSp.webp"} class = "size-12 rounded-full"/>
                 <p class = "text-right"> <span class = " text-right ">${movie.title}</span> (${movie.release_date !== "" ? movie.release_date.substring(0, 4): "Upcoming"})</p>
             </div>`
             if(idx != searchMovie.length - 1){
@@ -206,7 +203,7 @@ function sendingDataToHTML(element, item){
     element.addEventListener('click',(e) => {
         if(!e.target.classList.contains('fa-heart')){
             const jsonData = JSON.stringify(item);
-            window.location.href = `./movie.html?data=${encodeURIComponent(jsonData)}&prevUrl=${prevSrc}`
+            window.location.href = `./movie.html?data=${encodeURIComponent(jsonData)}`
         }
     })
 }

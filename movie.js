@@ -22,7 +22,7 @@ fetch("https://api.themoviedb.org/3/genre/movie/list?api_key=3206e39e86eabbd67af
 })
 
 const poster = document.querySelector("#poster");
-poster.src = data.poster_path !== null ? `https://image.tmdb.org/t/p/w440_and_h660_face/${data.poster_path}`: `/Images/360_F_374769082_EjmEBw7tarfjhwJ78Xxs05OjRBN4lwSp.webp`;
+poster.src = data.poster_path !== null ? `https://image.tmdb.org/t/p/w440_and_h660_face/${data.poster_path}`: `./Images/360_F_374769082_EjmEBw7tarfjhwJ78Xxs05OjRBN4lwSp.webp`;
 
 const title = document.querySelector("#movie-name");
 title.textContent = data.title;
