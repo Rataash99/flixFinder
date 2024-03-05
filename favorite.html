@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class = "bg-black">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMDB Clone</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/27b0574623.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body
+    class="bg-gradient-to-br from-slate-950 via-slate-900 to-black w-[100vw] h-[100vh] bg-center bg-cover text-white  bg-no-repeat relative"
+  >
+    <div
+      class="flex flex-col w-full  md:px-4 px-3  h-full  mx-auto overflow-scroll"
+    >
+    <header id = "top-header"
+    class="flex fixed flex-col mx-auto justify-start w-full h-fit items-center gap-2 p-2 md:py-4 md:px-4 top-0 left-0 right-0 shadow-xl shadow-slate-900 bg-slate-900 z-20 "
+  >
+    <a href="/index.html">
+      <img
+      id="logo"
+      class="size-10 w-auto cursor-pointer"
+      src="./Images/flixfinder-high-resolution-logo-transparent.png"
+      alt=""
+      />
+    </a>
+    <p id="fav-tagline" class = "absolute top-[4rem] md:mt-1 xl:mt-2 text-xl md:text-2xl left-[40%] lg:left-[47.5%] tracking-widest text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-cyan-600  to-violet-500">Favorites</p>
+  </header>
+      <main id="movies-container" class="relative flex h-auto">
+        <div
+          id="movies"
+          class="flex w-full mt-[8rem] py-4 justify-center flex-wrap gap-4"
+        ></div>
+      </main>
+    </div>
+    <script src="favorite.js"></script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class = "bg-black">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMDB Clone</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/27b0574623.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body
+    class="bg-gradient-to-br from-slate-950 via-slate-900 to-black w-[100vw] h-[100vh] bg-center bg-cover text-white  bg-no-repeat"
+  >
+    <div
+      class="flex flex-col w-full  md:px-4 px-3  h-full  mx-auto overflow-scroll"
+    >
+      <header id = "top-header"
+        class="flex fixed flex-col mx-auto justify-between w-full h-fit items-center gap-2 p-2 pb-0 md:py-4 md:px-4 top-0 left-0 right-0 shadow-xl shadow-slate-900 bg-slate-900 z-20 "
+      >
+        <a href="/index.html">
+          <img
+          id="logo"
+          class="w-auto cursor-pointer size-10"
+          src="./Images/flixfinder-high-resolution-logo-transparent.png"
+          alt=""
+          />
+        </a>
+        <div id="search" class = " relative scale-90">
+            <div class = "w-[90vw] max-w-[20rem] md:max-w-[35rem] left-0 right-0 mx-auto flex flex-col gap-[2px]">
+                <input
+                type="text"
+                class=" p-[14px] w-full rounded-md bg-transparent border border-slate-700 outline-none mx-auto text-sm focus:border-blue-500 backdrop-blur-sm duration-300 lg:scale-110"
+                placeholder="Search movie name"
+                />
+                <ul id = "search-list" class = "backdrop-blur-lg absolute w-full top-[3.3rem] rounded-sm flex flex-col h-auto max-h-[57.2vh] overflow-scroll bg-black bg-opacity-50"></ul>
+                <div
+                  id = "magnifying-glass" class = "absolute size-8 bordder text-center p-[23.9px]  bg-gradient-to-r from-cyan-400 via-cyan-600 to-violet-700 text-xs cursor-pointer duration-200 ease-linear flex rounded-e-md justify-center items-center right-[0.7px] top-[1.2px] bottom-0 lg:scale-110 lg:-right-[1.54rem]"
+                >
+                  <i class="fa-solid fa-magnifying-glass text-base"></i>
+                </div>
+            </div>
+        </div>
+      </header>
+      <main id="movies-container" class="relative flex h-auto">
+        <div
+          id="movies"
+          class="flex flex-col absolute w-full mt-[8rem] py-4  left-0 right-0 mx-auto lg:right-0 gap-5"
+        ></div>
+        
+        <aside
+          id="favorites"
+          class="top-10 fixed left-0  -translate-x-[8.3rem] fav-list-div flex flex-col mt-[5rem] w-full max-w-[11rem] rounded-md duration-200 backdrop-blur-md bg-slate-800 overflow-hidden"
+        >
+            <h3 id = "fav-heading" class = "right-0 text-base bg-opacity-60  tracking-widest flex justify-end gap-3 items-center">
+              <p id ="go-to-fav" class = " hover:text-blue-500 duration-100 cursor-pointer flex items-center gap-4 ease-in w-fit text-center">Favourites
+              </p>
+              <i id = "arrow" class="fa-solid fa-chevron-right duration-300 text-white cursor-pointer hover:text-blue-500 p-4 hover:bg-slate-900"></i>
+            </h3>
+        </aside>
+      </main>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

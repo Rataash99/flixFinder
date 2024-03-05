@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.marked{
+    color: red;
+}
+@media screen and (min-width: 400px){
+    #movie-main{
+        
+    }
+    #individual-movie-div{
+        flex-direction: row;
+    }
+}
+@media screen and (min-width: 510px){
+    #movies{
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3rem;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+    }
+    #movies-container{
+        top: 5rem;
+    }
+    #fav-tagline{
+        top: 1rem;
+    }
+    #ellipsis-btn{
+        top: 6rem;
+    }
+    #favorites{
+        top: -0.6rem;
+        margin-top: 7rem;
+    }   
+    #top-header{
+        flex-direction: row;
+        padding-bottom: 14px;
+    }
+    #movie-main{
+        margin-top: 2rem;
+    }
+}

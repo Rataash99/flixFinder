@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMDB Clone</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/27b0574623.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body
+    class="relative bg-gradient-to-br from-slate-950 via-slate-900 to-black bg-no-repeat w-[100vw] h-[100vh] bg-center bg-cover text-white"
+  >
+    <div
+      id="individual-movie"
+      class="container flex justify-center w-full h-full mx-auto overflow-scroll pt-[4rem]"
+    >
+    <header id = "top-header"
+    class="flex fixed flex-col mx-auto justify-center w-full h-fit items-center gap-2 p-2 md:py-4 md:px-4 top-0 left-0 right-0 shadow-xl shadow-slate-900 bg-slate-900 z-20 "
+  >
+    <a id = "prev-page">
+      <img
+      id="logo"
+      class="size-10 w-auto cursor-pointer"
+      src="./Images/flixfinder-high-resolution-logo-transparent.png"
+      alt=""
+      />
+    </a>
+  </header>
+      <main id = "movie-main" class="w-full overflow-scroll ">
+        <a  id = "back" href="./index.html" class = "hover:scale-105 border border-blue-500 cursor-pointer hover:text-blue-400 fixed left-3 text-md p-1.5 rounded-full top-[4rem] px-2.5 bg-slate-900 hover:bg-slate-950 sm:top-[5rem] lg:left-[4rem]">
+            <i class="fa-solid fa-arrow-left "></i>
+        </a>
+        <div id = "individual-movie-div" class="mx-auto w-full mt-[2rem] justify-center sm:justify-start sm:items-start items-center p-4 h-fit flex flex-col gap-6 md:gap-12">
+          <div class = "max-w-[20rem]">
+            <img id="poster" class = "shadow-xl shadow-slate-800 rounded-[4px]"/>
+          </div>
+          <div class="text-xs flex flex-col gap-5 md:max-w-[50rem] md:gap-8">
+            <div class = "flex flex-col gap-3 md:gap-4 lg:gap-5">
+              <h1 id="movie-name" class = "text-2xl md:text-3xl lg:text-4xl xl:text-5xl""></h1>
+              <p id="overview" class = "text-[10.4px] text-slate-400 text-left md:text-base"></p>
+            </div>
+            <div class = "flex flex-col gap-3 ">
+              <ul class = "flex flex-row gap-5 text-md text-slate-400 lg:text-base xl:text-xl">
+                  <div class = "flex gap-1 justify-center items-center">
+                      <i class="fa-solid fa-star text-yellow-500"></i>
+                      <li id="vote-avg"></li>
+                  </div>
+                  <li id="release-date" class = "text-blue-500"></li>
+              </ul>
+              <hr class = "border-s border-slate-500 h-0"></hr>
+              <ul id="genre" class = "flex gap-3 lg:text-base xl:text-xl"></ul>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="movie.js"></script>
+  </body>
+</html>
