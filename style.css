@@ -662,6 +662,10 @@ video {
   top: 8rem;
 }
 
+.top-\[5\.5rem\] {
+  top: 5.5rem;
+}
+
 .z-20 {
   z-index: 20;
 }
@@ -780,6 +784,22 @@ video {
   width: ;
 }
 
+.w-\[1\] {
+  width: 1;
+}
+
+.w-\[100\] {
+  width: 100;
+}
+
+.w-\[100\$\] {
+  width: 100$;
+}
+
+.w-\[100\%\] {
+  width: 100%;
+}
+
 .max-w-\[11rem\] {
   max-width: 11rem;
 }
@@ -819,6 +839,12 @@ video {
 .scale-90 {
   --tw-scale-x: .9;
   --tw-scale-y: .9;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-110 {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1617,6 +1643,38 @@ video {
     left: 47.5%;
   }
 
+  .lg\:top-\[\] {
+    top: ;
+  }
+
+  .lg\:top-\[4\] {
+    top: 4;
+  }
+
+  .lg\:top-\[4rem\] {
+    top: 4rem;
+  }
+
+  .lg\:top-\[5rem\] {
+    top: 5rem;
+  }
+
+  .lg\:top-\[5\.3rem\] {
+    top: 5.3rem;
+  }
+
+  .lg\:top-\[5\.5rem\] {
+    top: 5.5rem;
+  }
+
+  .lg\:w-\[\[\]\] {
+    width: [];
+  }
+
+  .lg\:w-\[\] {
+    width: ;
+  }
+
   .lg\:max-w-\[90vw\] {
     max-width: 90vw;
   }
@@ -1657,6 +1715,12 @@ video {
 
   .lg\:tracking-widest {
     letter-spacing: 0.1em;
+  }
+
+  .lg\:backdrop-blur-lg {
+    --tw-backdrop-blur: blur(16px);
+    -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   }
 }
 
