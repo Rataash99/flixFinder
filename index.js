@@ -93,13 +93,14 @@ movies.addEventListener('click', (e) => {
             e.target.classList.add("fa-solid");
         }
         // adding and removing favourites 
+        if(!favoriteMovies) favoriteMovies = [];
         movieData.forEach(item => {
             if(e.target.id == item.id){
                 if(e.target.classList.contains("marked")){
-                    favoriteMovies && favoriteMovies.push(item);
+                    favoriteMovies.push(item);
                 }
                 else{
-                    favoriteMovies = favoriteMovies && favoriteMovies.filter(obj => {
+                    favoriteMovies = favoriteMovies.filter(obj => {
                         return e.target.id != obj.id;
                     })
                 }
