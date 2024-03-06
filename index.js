@@ -28,7 +28,7 @@ const movieApi = (query) => {
 }
 movieApi(false);
 
-// creating div for movies
+// creating card div for movies
 function createMovieDiv(movieData){
     const movies = document.querySelector("#movies");
 
@@ -45,7 +45,7 @@ function createMovieDiv(movieData){
         movies.appendChild(ele);
         return;
     }
-    // adding movies to div
+    // adding fetched movies to div
     movieData.forEach(item => {
         let isPresent = false;
         if(favoriteMovies && favoriteMovies.length != 0){
@@ -75,8 +75,7 @@ function createMovieDiv(movieData){
         `
         movies.appendChild(div);
 
-        // sending card data to movie.html 
-        sendingDataToHTML(div, item);
+        sendingDataToHTML(div, item); // sending card data to movie.html 
     })
 }
 // adding and removing favorites to array
@@ -92,8 +91,9 @@ movies.addEventListener('click', (e) => {
             e.target.classList.remove("fa-regular");
             e.target.classList.add("fa-solid");
         }
+        if(!favoriteMovies) favoriteMovies = []; // Initialize favoriteMovies array if it's not already initialized
+        
         // adding and removing favourites 
-        if(!favoriteMovies) favoriteMovies = [];
         movieData.forEach(item => {
             if(e.target.id == item.id){
                 if(e.target.classList.contains("marked")){
